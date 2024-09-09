@@ -6,11 +6,14 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 10:34:23 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/09 10:35:14 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/09 12:34:02 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 int	main(int argc, char *argv[])
 {
 	
+	return (0);
 }

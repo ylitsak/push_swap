@@ -9,7 +9,7 @@ LIBFT = ./libft/libft.a
 all: $(NAME)
 
 $(LIBFT):
-	@$(MAKE) - C ./libft
+	@$(MAKE) -C ./libft
 
 $(NAME): $(OBJS) $(LIBFT)
 	$(CC) -o $(NAME) $(OBJS) $(LIBFT)
