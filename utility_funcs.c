@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   utility_funcs.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 10:34:23 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/11 22:08:17 by saylital         ###   ########.fr       */
+/*   Created: 2024/09/11 21:59:43 by saylital          #+#    #+#             */
+/*   Updated: 2024/09/11 22:00:33 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+long	ft_atoi_long(char *str)
 {
-	char	**input;
+	int		neg;
+	long	num;
 
-	input = NULL;
-	if (argc == 2)
-		input = ft_split(argv[1], ' ');
-	else if (argc > 2)
-		input = &argv[1];
-	if (validate_input(input) == -1 || argc == 1
-		|| *input == NULL || input == NULL)
+	neg = 1;
+	num = 0;
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		ft_putstr_fd("Error\n", 2);
-		if (argc == 2)
-			free_all(input);
-		exit(EXIT_FAILURE);
+		if (*str == '-')
+			neg = -1;
+		str++;
 	}
-	ft_printf("SUCCESS\n");
-	return (0);
+	while (*str >= '0' && *str <= '9')
+	{
+		num = (*str - '0') + num * 10;
+		str++;
+	}
+	return (num * neg);
 }

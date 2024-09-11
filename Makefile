@@ -2,7 +2,7 @@ NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 INCLUDE = -I ./libft
-SRCS = push_swap.c
+SRCS = push_swap.c validate_input.c error_handling.c utility_funcs.c
 OBJS = $(SRCS:.c=.o)
 LIBFT = ./libft/libft.a
 
@@ -21,9 +21,8 @@ clean:
 	rm -f $(OBJS)
 	@$(MAKE) clean -C ./libft
 
-fclean:
+fclean: clean
 	rm -f $(NAME) $(LIBFT)
-	@$(MAKE) fclean -C ./libft
 
 re: fclean all
 

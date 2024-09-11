@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   error_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 10:34:23 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/11 22:08:17 by saylital         ###   ########.fr       */
+/*   Created: 2024/09/11 11:29:45 by saylital          #+#    #+#             */
+/*   Updated: 2024/09/11 20:16:41 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void	free_all(char **free_data)
 {
-	char	**input;
+	int	i;
 
-	input = NULL;
-	if (argc == 2)
-		input = ft_split(argv[1], ' ');
-	else if (argc > 2)
-		input = &argv[1];
-	if (validate_input(input) == -1 || argc == 1
-		|| *input == NULL || input == NULL)
+	i = 0;
+	if (free_data == NULL)
+		return ;
+	if (*free_data == NULL)
+		return ;
+	while (free_data[i])
 	{
-		ft_putstr_fd("Error\n", 2);
-		if (argc == 2)
-			free_all(input);
-		exit(EXIT_FAILURE);
+		free(free_data[i]);
+		i++;
 	}
-	ft_printf("SUCCESS\n");
-	return (0);
+	free(free_data);
 }
