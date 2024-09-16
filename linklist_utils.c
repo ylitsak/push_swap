@@ -6,13 +6,28 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 11:11:58 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/16 18:15:52 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/16 21:07:17 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *new_head(t_stack *head, int argc, char **input)
+int	count_nodes(t_stack *a)
+{
+	t_stack	*temp;
+	int		count;
+
+	temp = a;
+	count = 0;
+	while (temp != NULL)
+	{
+		temp = temp->next;
+		count++;
+	}
+	return (count);
+}
+
+static t_stack	*new_head(t_stack *head, int argc, char **input)
 {
 	head = (t_stack *)malloc(sizeof(t_stack));
 	if (head == NULL)
@@ -23,10 +38,10 @@ t_stack *new_head(t_stack *head, int argc, char **input)
 	return (head);
 }
 
-void list_add_back(t_stack **current, int argc, char **input)
+static void	list_add_back(t_stack **current, int argc, char **input)
 {
-	t_stack *new_node;
-	int i;
+	t_stack	*new_node;
+	int		i;
 
 	new_node = NULL;
 	i = 1;
@@ -42,4 +57,16 @@ void list_add_back(t_stack **current, int argc, char **input)
 		*current = new_node;
 		i++;
 	}
+}
+
+t_stack	*init_nodes(int argc, char **input)
+{
+	t_stack	*head;
+	t_stack	*current;
+
+	head = NULL;
+	head = new_head(head, argc, input);
+	current = head;
+	list_add_back(&current, argc, input);
+	return (head);
 }

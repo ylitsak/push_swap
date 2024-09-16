@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 11:13:31 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/16 12:46:42 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/16 21:05:14 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ typedef struct s_stack
 //validate_input.c
 int		validate_input(char **input);
 //linklist_utils.c
-t_stack *new_head(t_stack *head, int argc, char **input);
-void	list_add_back(t_stack **current, int argc, char **input);
+t_stack	*init_nodes(int argc, char **input);
+int		count_nodes(t_stack *a);
 //error_handling.,c
 void	free_all(char **free_data);
 void	free_stack(t_stack *head);
