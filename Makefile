@@ -3,7 +3,7 @@ CC = gcc
 # CFLAGS = -Wall -Wextra -Werror -g
 INCLUDE = -I ./libft
 SRCS = push_swap.c validate_input.c error_handling.c utility_funcs.c linklist_utils.c swap_stack.c push_stack.c \
-	rotate_stack.c
+	rotate_stack.c rev_rotate_stack.c
 OBJS = $(SRCS:.c=.o)
 LIBFT = ./libft/libft.a
 

@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 10:34:23 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/18 20:10:04 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/18 20:32:24 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,15 @@ int	main(int argc, char *argv[])
 		free_all(input);
 	// sort_nodes(&a, &b);
 	count_nodes(a);
-	ra(&a);
+	// ra(&a);
 	// ft_printf("node b\n");
 	// count_nodes(b);
 	ft_printf("before push\n");
 	// pb(&a, &b);
 	// pb(&a, &b);
 	// pa(&a, &b);
+	// rb(&b);
+	rra(&a);
 	ft_printf("after push\n");
 	count_nodes(a);
 	// ft_printf("node b\n");
