@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:17:29 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/18 18:56:24 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/18 19:49:25 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	sa(t_stack **a)
 		second->next = first;
 		first->prev = second;
 		*a = second;
-		ft_putendl_fd("sa", 1);
+		ft_printf("%s\n", "sa");
 	}
 }
 // Swap the first 2 elements at the top of stack b.
@@ -51,7 +51,7 @@ void	sb(t_stack **b)
 		second->next = first;
 		first->prev = second;
 		*b = second;
-		ft_putendl_fd("sb", 1);
+		ft_printf("%s\n" "sb");
 	}
 }
 // sa and sb at the same time

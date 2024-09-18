@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 11:13:31 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/18 19:22:01 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/18 20:13:59 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,10 @@ void	sb(t_stack **b);
 // push_stack.c
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
+// rotate_stack.c
+void	ra(t_stack **a);
+void	rb(t_stack **b);
+void	rr(t_stack **a, t_stack **b);
+//
 
 #endif
