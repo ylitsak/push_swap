@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 11:11:58 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/16 21:07:17 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/18 18:42:59 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	count_nodes(t_stack *a)
 	count = 0;
 	while (temp != NULL)
 	{
+		ft_printf("adress prev %p, adress of value %p - {%d}, adress next: %p\n", temp->prev, &temp->value, temp->value, temp->next);
+
 		temp = temp->next;
 		count++;
 	}

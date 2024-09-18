@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 10:34:23 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/16 21:14:31 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/18 19:46:44 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	sort_nodes(t_stack **a, t_stack **b)
 	int	count;
 
 	count = count_nodes(*a);
-	ft_printf("%d\n", count);
+	// ft_printf("%d\n", count);
 	(void)b;
 }
 
@@ -39,7 +39,18 @@ int	main(int argc, char *argv[])
 	b = NULL;
 	if (argc == 2)
 		free_all(input);
-	sort_nodes(&a, &b);
+	// sort_nodes(&a, &b);
+	count_nodes(a);
+	ft_printf("node b\n");
+	count_nodes(b);
+	ft_printf("before push\n");
+	pb(&a, &b);
+	pb(&a, &b);
+	pa(&a, &b);
+	ft_printf("after push\n");
+	count_nodes(a);
+	ft_printf("node b\n");
+	count_nodes(b);
 	free_stack(a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:17:29 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/18 17:20:22 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/18 18:56:24 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,26 @@ void	sa(t_stack **a)
 // Do nothing if there is only one or no elements.
 void	sb(t_stack **b)
 {
+	t_stack	*first;
+	t_stack	*second;
+
+	if (*b && (*b)->next)
+	{
+		first = *b;
+		second = (*b)->next;
+		first->next = second->next;
+		if (second->next)
+			second->next->prev = first;
+		second->prev = NULL;
+		second->next = first;
+		first->prev = second;
+		*b = second;
+		ft_putendl_fd("sb", 1);
+	}
 }
 // sa and sb at the same time
 void	ss(t_stack **a, t_stack **b)
 {
+	sa(a);
+	sb(b);
 }
