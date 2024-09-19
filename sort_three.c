@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:06:26 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/18 21:19:22 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/19 17:24:39 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,26 @@ void	sort_three(t_stack **a)
 		&& (*a)->next->value < (*a)->next->next->value
 		&& (*a)->value < (*a)->next->next->value)
 		sa(a);
-	else
+	else if ((*a)->value < (*a)->next->value
+		&& (*a)->next->value > (*a)->next->next->value
+		&& (*a)->value > (*a)->next->next->value)
+		rra(a);
+	else if ((*a)->value < (*a)->next->value
+		&& (*a)->next->value > (*a)->next->next->value
+		&& (*a)->value < (*a)->next->next->value)
+		{
+			rra(a);
+			sa(a);
+		}
+	else if ((*a)->value > (*a)->next->value
+		&& (*a)->next->value < (*a)->next->next->value
+		&& (*a)->value > (*a)->next->next->value)
+		ra(a);
+	else if ((*a)->value > (*a)->next->value
+		&& (*a)->next->value > (*a)->next->next->value
+		&& (*a)->value > (*a)->next->next->value)
+		{
+			ra(a);
+			sa(a);
+		}
 }
