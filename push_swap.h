@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 11:13:31 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/19 17:07:29 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/23 14:12:44 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 typedef struct s_stack
 {
 	int				value;
+	int				pos;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;

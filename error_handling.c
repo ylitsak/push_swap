@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 11:29:45 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/16 21:05:30 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/23 13:07:06 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,20 @@ void	free_all(char **free_data)
 
 void	free_stack(t_stack *head)
 {
+	t_stack *current;
 	t_stack	*temp;
 
-	while (head != NULL)
+	current = head;
+	temp = NULL;
+	if (head == NULL)
+		return ;
+	while (current->next != head)
 	{
-		temp = head;
-		head = head->next;
-		free(temp);
+		temp = current->next;
+		free(current);
+		current = temp;
 	}
+	free(current);
 }
 
 void	error_and_free(int argc, char **input, char *msg)
