@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:17:29 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/18 19:49:25 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:51:36 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,49 +14,50 @@
 
 // Swap the first 2 elements at the top of stack a.
 // Do nothing if there is only one or no elements.
-void	sa(t_stack **a)
+void	sa(t_stack **a, int print)
 {
-	t_stack	*first;
-	t_stack	*second;
+	t_stack	*temp;
 
-	if (*a && (*a)->next)
-	{
-		first = *a;
-		second = (*a)->next;
-		first->next = second->next;
-		if (second->next)
-			second->next->prev = first;
-		second->prev = NULL;
-		second->next = first;
-		first->prev = second;
-		*a = second;
+	if (*a == NULL)
+		return ;
+	if ((*a)->next == *a)
+		return ;
+	temp = *a;
+	*a = (*a)->next;
+	temp->next = (*a)->next;
+	(*a)->next = temp;
+	temp->next->prev = temp;
+	temp->prev = *a;
+	(*a)->prev = temp->prev;
+	if (print)
 		ft_printf("%s\n", "sa");
-	}
 }
+
 // Swap the first 2 elements at the top of stack b.
 // Do nothing if there is only one or no elements.
-void	sb(t_stack **b)
+void	sb(t_stack **b, int print)
 {
-	t_stack	*first;
-	t_stack	*second;
+	t_stack	*temp;
 
-	if (*b && (*b)->next)
-	{
-		first = *b;
-		second = (*b)->next;
-		first->next = second->next;
-		if (second->next)
-			second->next->prev = first;
-		second->prev = NULL;
-		second->next = first;
-		first->prev = second;
-		*b = second;
-		ft_printf("%s\n" "sb");
-	}
+	if (*b == NULL)
+		return ;
+	if ((*b)->next == *b)
+		return ;
+	temp = *b;
+	*b = (*b)->next;
+	temp->next = (*b)->next;
+	(*b)->next = temp;
+	temp->next->prev = temp;
+	temp->prev = *b;
+	(*b)->prev = temp->prev;
+	if (print)
+		ft_printf("%s\n", "sb");
 }
+
 // sa and sb at the same time
 void	ss(t_stack **a, t_stack **b)
 {
-	sa(a);
-	sb(b);
+	sa(a, 0);
+	sb(b, 0);
+	ft_printf("%s\n", "ss");
 }

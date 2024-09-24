@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 11:11:58 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/23 12:37:04 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:50:50 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ int	count_nodes(t_stack *a)
 	int		count;
 
 	temp = a;
-	count = 1;
-	while (temp->next != a)
+	count = 0;
+	while (1)
 	{
-		ft_printf("adress prev %p, adress of value %p - {%d}, adress next: %p\n", temp->prev, &temp->value, temp->value, temp->next);
-
-		temp = temp->next;
 		count++;
+		temp = temp->next;
+		if (temp == a)
+			break ;
 	}
 	return (count);
 }
@@ -40,24 +40,19 @@ static t_stack	*new_head(t_stack *head, int argc, char **input)
 	return (head);
 }
 
-static void	list_add_back(t_stack **current, int argc, char **input, int i)
+static void	list_add_back(t_stack *current, int argc, char **input, int i)
 {
 	t_stack	*new_node;
 	t_stack	*head;
 
-	new_node = NULL;
-	head = (*current);
 	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (new_node == NULL)
 		error_and_free(argc, input, NULL);
 	new_node->value = ft_atoi(input[i]);
-	while ((*current)->next != head)
-	{
-		(*current) = (*current)->next;
-	}
-	(*current)->next = new_node;
-	new_node->next = head;
-	new_node->prev = *current;
+	head = current->prev;
+	head->next = new_node;
+	new_node->next = current;
+	new_node->prev = head;
 	head->prev = new_node;
 }
 
@@ -65,14 +60,14 @@ t_stack	*init_nodes(int argc, char **input)
 {
 	t_stack	*head;
 	t_stack	*current;
-	int	i;
+	int		i;
 
 	i = 1;
 	head = NULL;
 	head = new_head(head, argc, input);
 	while (input[i])
 	{
-		list_add_back(&head, argc, input, i);
+		list_add_back(head, argc, input, i);
 		i++;
 	}
 	return (head);

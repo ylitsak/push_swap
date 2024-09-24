@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 11:29:45 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/23 13:07:06 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:50:04 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	free_all(char **free_data)
 
 void	free_stack(t_stack *head)
 {
-	t_stack *current;
+	t_stack	*current;
 	t_stack	*temp;
 
 	current = head;
