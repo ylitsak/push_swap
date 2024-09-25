@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:17:29 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/25 11:49:13 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/25 20:22:21 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 // Swap the first 2 elements at the top of stack a.
 // Do nothing if there is only one or no elements.
-void sa(t_stack **a, int print)
+void	sa(t_stack **a, int print)
 {
-    t_stack	*first;
+	t_stack	*first;
 	t_stack	*second;
 
 	if (*a == NULL || (*a)->next == *a)
-		return;
+		return ;
 	first = *a;
 	second = (*a)->next;
 	first->prev->next = second;
@@ -38,11 +38,11 @@ void sa(t_stack **a, int print)
 // Do nothing if there is only one or no elements.
 void	sb(t_stack **b, int print)
 {
-    t_stack	*first;
+	t_stack	*first;
 	t_stack	*second;
 
 	if (*b == NULL || (*b)->next == *b)
-		return;
+		return ;
 	first = *b;
 	second = (*b)->next;
 	first->prev->next = second;
@@ -52,7 +52,6 @@ void	sb(t_stack **b, int print)
 	second->next = first;
 	first->prev = second;
 	*b = second;
-	if (print)
 	if (print)
 		ft_printf("%s\n", "sb");
 }

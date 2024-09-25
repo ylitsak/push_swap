@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:06:26 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/24 18:05:54 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/25 20:14:23 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,29 @@
 
 void	sort_three(t_stack **a)
 {
-	if ((*a)->value > (*a)->next->value
-		&& (*a)->next->value < (*a)->next->next->value
-		&& (*a)->value < (*a)->next->next->value)
+	if ((*a)->value > (*a)->next->value && (*a)->next->value < (*a)->prev->value
+		&& (*a)->value < (*a)->prev->value)
 		sa(a, 1);
 	else if ((*a)->value < (*a)->next->value
-		&& (*a)->next->value > (*a)->next->next->value
-		&& (*a)->value > (*a)->next->next->value)
+		&& (*a)->next->value > (*a)->prev->value
+		&& (*a)->value > (*a)->prev->value)
 		rra(a, 1);
 	else if ((*a)->value < (*a)->next->value
-		&& (*a)->next->value > (*a)->next->next->value
-		&& (*a)->value < (*a)->next->next->value)
-		{
-			rra(a, 1);
-			sa(a, 1);
-		}
+		&& (*a)->next->value > (*a)->prev->value
+		&& (*a)->value < (*a)->prev->value)
+	{
+		rra(a, 1);
+		sa(a, 1);
+	}
 	else if ((*a)->value > (*a)->next->value
-		&& (*a)->next->value < (*a)->next->next->value
-		&& (*a)->value > (*a)->next->next->value)
+		&& (*a)->next->value < (*a)->prev->value
+		&& (*a)->value > (*a)->prev->value)
 		ra(a, 1);
 	else if ((*a)->value > (*a)->next->value
-		&& (*a)->next->value > (*a)->next->next->value
-		&& (*a)->value > (*a)->next->next->value)
-		{
-			ra(a, 1);
-			sa(a, 1);
-		}
+		&& (*a)->next->value > (*a)->prev->value
+		&& (*a)->value > (*a)->prev->value)
+	{
+		ra(a, 1);
+		sa(a, 1);
+	}
 }
