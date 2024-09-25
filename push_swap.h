@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 11:13:31 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/24 18:19:17 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/25 13:46:23 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	error_and_free(int argc, char **input, char *msg);
 //utility_funcs.c
 long	ft_atoi_long(char *str);
 int		is_nodes_sorted(t_stack *a);
-void	print_nodes(t_stack *a);
+void	print_nodes(t_stack *a, char c);
 // swap_stacks.c
 void	sa(t_stack **a, int print);
 void	sb(t_stack **b, int print);

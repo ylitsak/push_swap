@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 21:59:43 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/24 18:53:47 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/25 13:49:21 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,19 @@ int	is_nodes_sorted(t_stack *a)
 	return (0);
 }
 
-void	print_nodes(t_stack *a)
+void	print_nodes(t_stack *a, char c)
 {
 	t_stack	*temp;
 
 	temp = a;
 	if (!a)
+	{
+		ft_printf("%c is empty\n", c);
 		return ;
+	}
 	while (1)
 	{
-		ft_printf("(adress prev %p), (adress of value %p) - {%d}, (adress next: %p)\n", temp->prev, &temp->value, temp->value, temp->next);
+		ft_printf("stack %c (adress prev %p), (adress of value %p) - {%d}, (adress next: %p)\n", c, temp->prev, &temp->value, temp->value, temp->next);
 		temp = temp->next;
 		if (temp == a)
 			break ;
