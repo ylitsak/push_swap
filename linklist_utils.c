@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 11:11:58 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/25 20:19:53 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/25 21:01:02 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,26 +62,25 @@ static t_stack	*new_head(t_stack *head, int argc, char **input)
 	return (head);
 }
 
-static void	list_add_back(t_stack *current, int argc, char **input, int i)
+static void	list_add_back(t_stack *head, int argc, char **input, int i)
 {
 	t_stack	*new_node;
-	t_stack	*head;
+	t_stack	*tail;
 
 	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (new_node == NULL)
 		error_and_free(argc, input, NULL);
 	new_node->value = ft_atoi(input[i]);
-	head = current->prev;
-	head->next = new_node;
-	new_node->prev = head;
-	new_node->next = current;
-	current->prev = new_node;
+	tail = head->prev;
+	tail->next = new_node;
+	new_node->prev = tail;
+	new_node->next = head;
+	head->prev = new_node;
 }
 
 t_stack	*init_nodes(int argc, char **input)
 {
 	t_stack	*head;
-	t_stack	*current;
 	int		i;
 
 	i = 1;
