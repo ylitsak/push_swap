@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 11:09:00 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/11 22:04:48 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/25 19:10:01 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ static int	check_if_duplicate(char **input)
 		while (input[j])
 		{
 			if (ft_atoi(input[i]) == ft_atoi(input[j]))
-				return (-1);
+				return (1);
 			j++;
 		}
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 static int	check_overflow(char **input)
@@ -42,10 +42,10 @@ static int	check_overflow(char **input)
 	{
 		num = ft_atoi_long(input[i]);
 		if (num > 2147483647 || num < -2147483648)
-			return (-1);
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 static int	input_is_numbers(char **input)
@@ -63,14 +63,14 @@ static int	input_is_numbers(char **input)
 		while (input[i][j])
 		{
 			if (input[i][j] < '0' || input[i][j] > '9')
-				return (-1);
+				return (1);
 			j++;
 		}
 		if (j == 0 || (j == 1 && (input[i][0] == '+' || input[i][0] == '-')))
-			return (-1);
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 static int	input_is_empty(char **input)
@@ -85,21 +85,21 @@ static int	input_is_empty(char **input)
 		while (input[i][j] == ' ' || input[i][j] == '\t')
 			j++;
 		if (input[i][j] == '\0')
-			return (-1);
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 int	validate_input(char **input)
 {
-	if (input_is_empty(input) == -1)
-		return (-1);
-	if (input_is_numbers(input) == -1)
-		return (-1);
-	if (check_overflow(input) == -1)
-		return (-1);
-	if (check_if_duplicate(input) == -1)
-		return (-1);
-	return (1);
+	if (input_is_empty(input) == 1)
+		return (1);
+	if (input_is_numbers(input) == 1)
+		return (1);
+	if (check_overflow(input) == 1)
+		return (1);
+	if (check_if_duplicate(input) == 1)
+		return (1);
+	return (0);
 }
