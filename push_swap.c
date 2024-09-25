@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 10:34:23 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/25 18:05:41 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/25 19:02:48 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,21 @@ static void	sort_nodes(t_stack **a, t_stack **b)
 
 	count = count_nodes(*a);
 	ft_printf("%d\n", count);
-	//print_nodes(*a);
-	pb(a, b);
-	pb(a, b);
-	pa(a, b);
 	// pb(a, b);
+	// pb(a, b);
+	// pa(a, b);
 	print_nodes(*a, 'a');
 	print_nodes(*b, 'b');
-	return ;
-	// if (is_stack_sorted(*a) == 0)
-	// 	return ;
-	// if (count == 2)
-	// {
-	// 	sa(a);
-	// 	return ;
-	// }
+	if (check_if_sorted(*a) == 0)
+	{
+		ft_printf("LIST IS SORTED\n");
+		return ;
+	}
+	if (count == 2)
+	{
+		sa(a, 1);
+		return ;
+	}
 	// if (count == 3)
 	// 	sort_three(a);
 	// (void)b;
@@ -57,6 +57,8 @@ int	main(int argc, char *argv[])
 	if (argc == 2)
 		free_all(input);
 	sort_nodes(&a, &b);
+	print_nodes(a, 'a');
+	print_nodes(b, 'b');
 	free_stack(a);
 	return (0);
 }

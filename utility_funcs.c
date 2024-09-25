@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 21:59:43 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/25 13:49:21 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/25 18:13:09 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,26 +33,6 @@ long	ft_atoi_long(char *str)
 		str++;
 	}
 	return (num * neg);
-}
-
-int	is_nodes_sorted(t_stack *a)
-{
-	t_stack	*temp;
-
-	temp = a;
-	if (!a)
-		return (-1);
-	while (temp->next != a)
-	{
-		if (temp->value > temp->next->value)
-		{
-			return (-1);
-		}
-		temp = temp->next;
-	}
-	if (temp->value > temp->next->value)
-		return (-1);
-	return (0);
 }
 
 void	print_nodes(t_stack *a, char c)

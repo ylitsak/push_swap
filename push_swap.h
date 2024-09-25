@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 11:13:31 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/25 13:46:23 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/25 18:59:35 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack
 int		validate_input(char **input);
 //linklist_utils.c
 t_stack	*init_nodes(int argc, char **input);
+int		check_if_sorted(t_stack *a);
 int		count_nodes(t_stack *a);
 //error_handling.,c
 void	free_all(char **free_data);
@@ -33,7 +34,6 @@ void	free_stack(t_stack *head);
 void	error_and_free(int argc, char **input, char *msg);
 //utility_funcs.c
 long	ft_atoi_long(char *str);
-int		is_nodes_sorted(t_stack *a);
 void	print_nodes(t_stack *a, char c);
 // swap_stacks.c
 void	sa(t_stack **a, int print);

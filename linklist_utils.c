@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 11:11:58 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/24 20:04:04 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/25 19:02:25 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,28 @@ int	count_nodes(t_stack *a)
 			break ;
 	}
 	return (count);
+}
+
+int	check_if_sorted(t_stack *a)
+{
+	t_stack	*temp;
+
+	temp = a;
+	if (!a)
+		return (1);
+	if (a->next == a)
+		return (0);
+	while (temp->next != a)
+	{
+		ft_printf("%d\n", temp->value);
+		if (temp->value > temp->next->value)
+		{
+			// ft_printf("not sorted %d\n", temp->next->value);
+			return (1);
+		}
+		temp = temp->next;
+	}
+	return (0);
 }
 
 static t_stack	*new_head(t_stack *head, int argc, char **input)
