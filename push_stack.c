@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:13:56 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/18 19:45:48 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/25 11:49:56 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,7 @@ void	pa(t_stack **a, t_stack **b)
 	if (*b == NULL)
 		return ;
 	temp = *b;
-	if (*b && (*b)->next)
-	{
-		(*b) = (*b)->next;
-		(*b)->prev = NULL;
-	}
-	else
-		(*b) = NULL;
-	if (*a == NULL)
-	{
-		(*a) = temp;
-		(*a)->next = NULL;
-	}
-	else
-	{
-		(*a)->prev = temp;
-		temp->next = *a;
-		*a = temp;
-	}
+	
 	ft_printf("%s\n", "pa");
 	
 }
