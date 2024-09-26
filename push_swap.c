@@ -6,20 +6,26 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 10:34:23 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/25 20:17:43 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/26 20:49:57 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// void	sort_five(t_stack **a, t_stack **b)
+// {
+
+// }
+
 static void	sort_nodes(t_stack **a, t_stack **b)
 {
 	int	count;
+	int	*arr;
 
 	count = count_nodes(*a);
-	ft_printf("%d\n", count);
-	print_nodes(*a, 'a');
-	print_nodes(*b, 'b');
+	ft_printf("nodes count=%d\n", count);
+	// print_nodes(*a, 'a');
+	// print_nodes(*b, 'b');
 	if (check_if_sorted(*a) == 0)
 	{
 		ft_printf("LIST IS SORTED\n");
@@ -31,7 +37,49 @@ static void	sort_nodes(t_stack **a, t_stack **b)
 		return ;
 	}
 	if (count == 3)
+	{
 		sort_three(a);
+		return ;
+	}
+	arr = make_array(count, *a);
+	int i = 0;
+	while (i < count)
+	{
+		ft_printf(" %d", arr[i]);
+		i++;
+	}
+	ft_printf("\n");
+	sort_array(arr, count);
+	i = 0;
+	while (i < count)
+	{
+		ft_printf(" %d", arr[i]);
+		i++;
+	}
+	ft_printf("\n");
+	t_stack *temp = *a;
+	while (1)
+	{
+		ft_printf("a->value=%d ", (*a)->value);
+		ft_printf("a->pos=%d\n", (*a)->pos);
+		*a = (*a)->next;
+		if (temp == *a)
+			break;
+	}
+	ft_printf("\n");
+	add_node_position(*a, arr, count);
+	while (1)
+	{
+		ft_printf("a->value=%d ", (*a)->value);
+		ft_printf("a->pos=%d\n", (*a)->pos);
+		*a = (*a)->next;
+		if (temp == *a)
+			break;
+	}
+	// if (count <= 5)
+	// {
+	// 	sort_five(a, b);
+	// }
 	(void)b;
 }
 
@@ -54,8 +102,8 @@ int	main(int argc, char *argv[])
 	if (argc == 2)
 		free_all(input);
 	sort_nodes(&a, &b);
-	print_nodes(a, 'a');
-	print_nodes(b, 'b');
+	// print_nodes(a, 'a');
+	// print_nodes(b, 'b');
 	free_stack(a);
 	return (0);
 }

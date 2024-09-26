@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 11:11:58 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/25 21:01:02 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/26 18:03:27 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,10 @@ static void	list_add_back(t_stack *head, int argc, char **input, int i)
 
 	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (new_node == NULL)
+	{
+		free_stack(head);
 		error_and_free(argc, input, NULL);
+	}
 	new_node->value = ft_atoi(input[i]);
 	tail = head->prev;
 	tail->next = new_node;

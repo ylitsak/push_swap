@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 11:13:31 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/25 18:59:35 by saylital         ###   ########.fr       */
+/*   Updated: 2024/09/26 20:49:50 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ void	error_and_free(int argc, char **input, char *msg);
 //utility_funcs.c
 long	ft_atoi_long(char *str);
 void	print_nodes(t_stack *a, char c);
+int		*make_array(int count, t_stack *a);
+void	sort_array(int *arr, int count);
+void	add_node_position(t_stack *a, int *arr, int count);
 // swap_stacks.c
 void	sa(t_stack **a, int print);
 void	sb(t_stack **b, int print);
@@ -49,7 +52,7 @@ void	rr(t_stack **a, t_stack **b);
 void	rra(t_stack **a, int print);
 void	rrb(t_stack **b, int print);
 void	rrr(t_stack **a, t_stack **b);
-// sort_three.c
+// small_sort_algos.c
 void	sort_three(t_stack **a);
 
 #endif
