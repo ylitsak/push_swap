@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:17:29 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/25 20:22:21 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/06 14:04:46 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void	sa(t_stack **a, int print)
 		return ;
 	first = *a;
 	second = (*a)->next;
-	first->prev->next = second;
-	second->next->prev = first;
 	first->next = second->next;
-	second->prev = first->prev;
+	second->next->prev = first;
 	second->next = first;
+	second->prev = first->prev;
+	first->prev->next = second;
 	first->prev = second;
 	*a = second;
 	if (print)
@@ -45,11 +45,11 @@ void	sb(t_stack **b, int print)
 		return ;
 	first = *b;
 	second = (*b)->next;
-	first->prev->next = second;
-	second->next->prev = first;
 	first->next = second->next;
-	second->prev = first->prev;
+	second->next->prev = first;
 	second->next = first;
+	second->prev = first->prev;
+	first->prev->next = second;
 	first->prev = second;
 	*b = second;
 	if (print)

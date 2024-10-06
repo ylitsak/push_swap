@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 21:59:43 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/26 20:49:35 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/06 14:38:09 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ void	sort_array(int *arr, int count)
 		i++;
 	}
 }
+
 void	add_node_position(t_stack *a, int *arr, int count)
 {
 	t_stack	*temp;
@@ -118,6 +119,30 @@ void	add_node_position(t_stack *a, int *arr, int count)
 		}
 		temp = temp->next;
 		if (temp == a)
-			break;
+			break ;
 	}
+}
+
+int	find_lowest_pos(t_stack *a)
+{
+	t_stack	*lowest;
+	int		a_pos;
+	int		pos_index;
+	int		i;
+
+	lowest = a;
+	a_pos = a->pos;
+	pos_index = 0;
+	i = 0;
+	while (lowest->next != a)
+	{
+		if (lowest->pos < a_pos)
+		{
+			a_pos = lowest->pos;
+			pos_index = i;
+		}
+		i++;
+		lowest = lowest->next;
+	}
+	return (pos_index);
 }

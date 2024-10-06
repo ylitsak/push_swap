@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 11:09:00 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/25 19:10:01 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/02 21:17:45 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static int	input_is_numbers(char **input)
 	while (input[i])
 	{
 		j = 0;
-		if (input[i][j] != '+' || input[i][j] != '-')
+		if (input[i][j] == '+' || input[i][j] == '-')
 			j++;
 		while (input[i][j])
 		{
