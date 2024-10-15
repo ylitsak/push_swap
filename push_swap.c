@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 10:34:23 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/15 14:44:16 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:58:40 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,15 +102,15 @@ int main(int argc, char *argv[])
 	if (argc == 2)
 		free_all(input);
 	sort_nodes(&a, &b);
-	// t_stack *temp = a;
-	// while (1)
-	// {
-	// 	ft_printf("a->value=%d ", (a)->value);
-	// 	ft_printf("a->pos=%d\n", (a)->pos);
-	// 	a = (a)->next;
-	// 	if (temp == a)
-	// 		break;
-	// }
+	t_stack *temp = a;
+	while (1)
+	{
+		ft_printf("a->value=%d ", (a)->value);
+		ft_printf("a->pos=%d\n", (a)->pos);
+		a = (a)->next;
+		if (temp == a)
+			break;
+	}
 	// print_nodes(a, 'a');
 	// print_nodes(b, 'b');
 	free_stack(a);

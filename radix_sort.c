@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:33:44 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/15 14:44:05 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:59:23 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	radix_sort(t_stack **a, t_stack **b, int count)
 	high = find_highest_pos(*a);
 	bits = count_bits(high);
 	index = 0;
-	// ft_printf("highest pos -> %d bits -> %d", high, bits);
+	//ft_printf("highest pos -> %d bits -> %d", high, bits);
 	while (bits)
 	{
 		// if (check_if_sorted(*a) == 0)
