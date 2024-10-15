@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 11:29:45 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/24 18:50:04 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/15 10:40:56 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	free_all(char **free_data)
 
 	i = 0;
 	if (free_data == NULL)
-		return ;
-	if (*free_data == NULL)
 		return ;
 	while (free_data[i])
 	{

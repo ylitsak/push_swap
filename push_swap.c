@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 10:34:23 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/06 14:31:40 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:33:19 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,11 @@ static void sort_nodes(t_stack **a, t_stack **b)
 		sort_five(a, b, count);
 		return;
 	}
-	(void)b;
+	else
+	{
+		radix_sort(a, b, count);
+		return ;
+	}
 }
 
 int main(int argc, char *argv[])
