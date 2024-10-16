@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:33:44 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/15 14:59:23 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/16 11:25:14 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static	int find_highest_pos(t_stack *a)
 	max = 0;
 	while (1)
 	{
-		if (highest->pos > a->pos)
+		if (highest->pos > max)
 			max = highest->pos;
 		highest = highest->next;
 		if (highest == a)
@@ -73,11 +73,10 @@ void	radix_sort(t_stack **a, t_stack **b, int count)
 	high = find_highest_pos(*a);
 	bits = count_bits(high);
 	index = 0;
-	//ft_printf("highest pos -> %d bits -> %d", high, bits);
-	while (bits)
+	while (index < bits)
 	{
-		// if (check_if_sorted(*a) == 0)
-		// 	return ;
+		if (check_if_sorted(*a) == 0)
+			return ;
 		nodes = count;
 		while (nodes)
 		{
@@ -90,6 +89,5 @@ void	radix_sort(t_stack **a, t_stack **b, int count)
 		while ((*b))
 			pa(a, b);
 		index++;
-		bits--;
 	}
 }
