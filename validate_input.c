@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 11:09:00 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/02 21:17:45 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/16 14:14:19 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,28 +73,28 @@ static int	input_is_numbers(char **input)
 	return (0);
 }
 
-static int	input_is_empty(char **input)
-{
-	int	i;
-	int	j;
+// static int	input_is_empty(char **input)
+// {
+// 	int	i;
+// 	int	j;
 
-	i = 0;
-	while (input[i])
-	{
-		j = 0;
-		while (input[i][j] == ' ' || input[i][j] == '\t')
-			j++;
-		if (input[i][j] == '\0')
-			return (1);
-		i++;
-	}
-	return (0);
-}
+// 	i = 0;
+// 	while (input[i])
+// 	{
+// 		j = 0;
+// 		while (input[i][j] == ' ' || input[i][j] == '\t')
+// 			j++;
+// 		if (input[i][j] == '\0')
+// 			return (1);
+// 		i++;
+// 	}
+// 	return (0);
+// }
 
 int	validate_input(char **input)
 {
-	if (input_is_empty(input) == 1)
-		return (1);
+	// if (input_is_empty(input) == 1)
+	// 	return (1);
 	if (input_is_numbers(input) == 1)
 		return (1);
 	if (check_overflow(input) == 1)

@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:06:26 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/06 14:36:45 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/18 16:35:37 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,56 +40,47 @@ void	sort_three(t_stack **a)
 		sa(a, 1);
 	}
 }
+static int	count_index(t_stack *a, int min)
+{
+	int		count;
+	t_stack	*temp;
+
+	count = 0;
+	temp = a;
+	while (temp->next != a)
+	{
+		if (temp->pos == min)
+			break ;
+		count++;
+		temp = temp->next;
+	}
+	return (count);
+}
 
 void	sort_five(t_stack **a, t_stack **b, int count)
 {
 	int	min;
-	int	max;
+	int	index;
 
-	if (count == 5)
+	min = 0;
+	while (count != 3)
+	{
+		if ((*a)->pos != min)
+		{
+			index = count_index(*a, min);
+			while ((*a)->pos != min)
+			{
+				if (index < 2)
+					ra(a, 1);
+				else
+					rra(a, 1);
+			}
+		}
+		min++;
 		pb(a, b);
-	pb(a, b);
+		count--;
+	}
 	sort_three(a);
-	min = (*a)->pos;
-	max = (*a)->prev->pos;
-	while (*b)
-		move_to_a(a, b, &min, &max);
-	sort_stack_to_order(a);
-	return ;
-}
-
-void	move_to_a(t_stack **a, t_stack **b, int *min, int *max)
-{
-	if ((*b)->pos < *min)
-	{
-		while ((*a)->pos != *min)
-			ra(a, 1);
-		pa(a, b);
-		*min = (*a)->pos;
-	}
-	else if ((*b)->pos > *max)
-	{
-		while ((*a)->prev->pos != *max)
-			rra(a, 1);
-		pa(a, b);
-		ra(a, 1);
-		*max = (*a)->prev->pos;
-	}
-	else
-	{
-		while (!((*b)->pos < (*a)->pos && (*b)->pos > (*a)->prev->pos))
-			ra(a, 1);
-		pa(a, b);
-	}
-}
-
-void	sort_stack_to_order(t_stack **a)
-{
-	while ((*a)->pos != 0)
-	{
-		if ((*a)->pos > 2)
-			ra(a, 1);
-		else
-			rra(a, 1);
-	}
+	pa(a, b);
+	pa(a, b);
 }

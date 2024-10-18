@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 11:13:31 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/15 14:59:10 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/18 16:37:15 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ void	rrr(t_stack **a, t_stack **b);
 // small_sort_algos.c
 void	sort_three(t_stack **a);
 void	sort_five(t_stack **a, t_stack **b, int count);
-void	move_to_a(t_stack **a, t_stack **b, int *min, int *max);
-void	sort_stack_to_order(t_stack **a);
 // radix_sort.c
 void	radix_sort(t_stack **a, t_stack **b, int count);
 

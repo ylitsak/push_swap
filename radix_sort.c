@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:33:44 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/16 11:25:14 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:37:37 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static	int count_bits(int high)
 		count++;
 	}
 	// maybe need to be count + 1 since we start at 0 pos, so i might skip bits?
-	count += 1;
+	// count += 1;
 	return (count);
 }
 
@@ -73,6 +73,7 @@ void	radix_sort(t_stack **a, t_stack **b, int count)
 	high = find_highest_pos(*a);
 	bits = count_bits(high);
 	index = 0;
+	//ft_printf("how many bits %d\n", bits);
 	while (index < bits)
 	{
 		if (check_if_sorted(*a) == 0)
