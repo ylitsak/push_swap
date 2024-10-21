@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 11:11:58 by saylital          #+#    #+#             */
-/*   Updated: 2024/09/26 18:03:27 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/20 10:59:47 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,8 @@ int	check_if_sorted(t_stack *a)
 		return (0);
 	while (temp->next != a)
 	{
-		// ft_printf("%d\n", temp->value);
 		if (temp->value > temp->next->value)
 		{
-			// ft_printf("not sorted %d\n", temp->next->value);
 			return (1);
 		}
 		temp = temp->next;

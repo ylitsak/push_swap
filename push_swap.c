@@ -6,20 +6,18 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 10:34:23 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/18 16:30:28 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/20 11:13:54 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void sort_nodes(t_stack **a, t_stack **b)
+static void sort_nodes(t_stack **a, t_stack **b, int count)
 {
-	int count;
 	int *arr;
 
-	count = count_nodes(*a);
 	if (check_if_sorted(*a) == 0)
-		return;
+		return ;
 	if (count == 2)
 	{
 		sa(a, 1);
@@ -33,27 +31,14 @@ static void sort_nodes(t_stack **a, t_stack **b)
 	arr = make_array(count, *a);
 	sort_array(arr, count);
 	add_node_position(*a, arr, count);
-	// t_stack *temp = *a;
-	// while (1)
-	// {
-	// 	ft_printf("a->value=%d ", (*a)->value);
-	// 	ft_printf("a->pos=%d ", (*a)->pos);
-	// 	ft_printf("a->index=%d\n", (*a)->index);
-	// 	*a = (*a)->next;
-	// 	if (temp == *a)
-	// 		break;
-	// }
 	free(arr);
 	if (count <= 5)
 	{
 		sort_five(a, b, count);
 		return;
 	}
-	else
-	{
-		radix_sort(a, b, count);
-		return ;
-	}
+	radix_sort(a, b, count);
+	return ;
 }
 
 int main(int argc, char *argv[])
@@ -61,8 +46,8 @@ int main(int argc, char *argv[])
 	char **input;
 	t_stack *a;
 	t_stack *b;
+	int		count;
 
-	input = NULL;
 	if (argc == 1)
 		return (0);
 	if (argc == 2)
@@ -75,19 +60,8 @@ int main(int argc, char *argv[])
 	b = NULL;
 	if (argc == 2)
 		free_all(input);
-	sort_nodes(&a, &b);
-	// t_stack *temp = a;
-	// while (1)
-	// {
-	// 	ft_printf("a->value=%d ", (a)->value);
-	// 	ft_printf("a->pos=%d ", (a)->pos);
-	// 	ft_printf("a->index=%d\n", (a)->index);
-	// 	a = (a)->next;
-	// 	if (temp == a)
-	// 		break;
-	// }
-	// print_nodes(a, 'a');
-	// print_nodes(b, 'b');
+	count = count_nodes(a);
+	sort_nodes(&a, &b, count);
 	free_stack(a);
 	return (0);
 }

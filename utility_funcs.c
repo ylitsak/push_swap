@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 21:59:43 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/18 16:36:41 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/20 11:02:05 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,26 +123,3 @@ void	add_node_position(t_stack *a, int *arr, int count)
 	}
 }
 
-int	find_lowest_pos(t_stack *a)
-{
-	t_stack	*lowest;
-	int		a_pos;
-	int		pos_index;
-	int		i;
-
-	lowest = a;
-	a_pos = a->pos;
-	pos_index = 0;
-	i = 0;
-	while (lowest->next != a)
-	{
-		if (lowest->pos < a_pos)
-		{
-			a_pos = lowest->pos;
-			pos_index = i;
-		}
-		i++;
-		lowest = lowest->next;
-	}
-	return (pos_index);
-}
