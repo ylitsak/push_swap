@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:06:26 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/21 10:47:08 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/21 15:02:28 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static int	count_index(t_stack *a, int min)
 	return (count);
 }
 
-void	sort_five(t_stack **a, t_stack **b, int count)
+void	sort_small(t_stack **a, t_stack **b, int count)
 {
 	int	min;
 	int	index;
@@ -71,7 +71,7 @@ void	sort_five(t_stack **a, t_stack **b, int count)
 			index = count_index(*a, min);
 			while ((*a)->pos != min)
 			{
-				if (index < 2)
+				if (index < count / 2)
 					ra(a, 1);
 				else
 					rra(a, 1);
@@ -82,6 +82,6 @@ void	sort_five(t_stack **a, t_stack **b, int count)
 		count--;
 	}
 	sort_three(a);
-	pa(a, b);
-	pa(a, b);
+	while (*b)
+		pa(a, b);
 }

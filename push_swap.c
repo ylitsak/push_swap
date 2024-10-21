@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 10:34:23 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/21 10:50:12 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/21 15:42:56 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,17 @@ static void	sort_nodes(t_stack **a, t_stack **b, int count)
 	sort_array(arr, count);
 	add_node_position(*a, arr, count);
 	free(arr);
-	if (count <= 5)
+	// t_stack *temp = *a;
+	// while (1)
+	// {
+	// 	ft_printf("%d\n", temp->value);
+	// 	temp = temp->next;
+	// 	if (temp == *a)
+	// 		break ;
+	// }
+	if (count <= 50)
 	{
-		sort_five(a, b, count);
+		sort_small(a, b, count);
 		return ;
 	}
 	radix_sort(a, b, count);
@@ -62,6 +70,14 @@ int	main(int argc, char *argv[])
 		free_all(input);
 	count = count_nodes(a);
 	sort_nodes(&a, &b, count);
+	// t_stack *temp = a;
+	// while (1)
+	// {
+	// 	ft_printf("%d\n", temp->value);
+	// 	temp = temp->next;
+	// 	if (temp == a)
+	// 		break ;
+	// }
 	free_stack(a);
 	return (0);
 }
