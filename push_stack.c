@@ -6,14 +6,21 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:13:56 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/20 11:33:09 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/21 11:26:42 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static	void	set_head(t_stack **temp, t_stack **stack)
+{
+	(*temp)->next = *temp;
+	(*temp)->prev = *temp;
+	*stack = *temp;
+}
 // Take the first element at the top of b and put it at the top of a.
 // Do nothing if b is empty.
+
 void	pa(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;
@@ -30,11 +37,7 @@ void	pa(t_stack **a, t_stack **b)
 		(*b)->prev->next = *b;
 	}
 	if (*a == NULL)
-	{
-		temp->next = temp;
-		temp->prev = temp;
-		*a = temp;
-	}
+		set_head(&temp, a);
 	else
 	{
 		temp->prev = (*a)->prev;
@@ -64,11 +67,7 @@ void	pb(t_stack **a, t_stack **b)
 		(*a)->prev->next = *a;
 	}
 	if (*b == NULL)
-	{
-		temp->next = temp;
-		temp->prev = temp;
-		*b = temp;
-	}
+		set_head(&temp, b);
 	else
 	{
 		temp->prev = (*b)->prev;

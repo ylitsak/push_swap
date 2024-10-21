@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 11:13:31 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/18 16:37:15 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/21 10:45:52 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	free_stack(t_stack *head);
 void	error_and_free(int argc, char **input, char *msg);
 //utility_funcs.c
 long	ft_atoi_long(char *str);
-void	print_nodes(t_stack *a, char c);
 int		*make_array(int count, t_stack *a);
 void	sort_array(int *arr, int count);
 int		find_lowest_pos(t_stack *a);

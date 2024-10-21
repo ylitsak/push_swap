@@ -6,27 +6,27 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 10:34:23 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/20 11:13:54 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/21 10:50:12 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void sort_nodes(t_stack **a, t_stack **b, int count)
+static void	sort_nodes(t_stack **a, t_stack **b, int count)
 {
-	int *arr;
+	int	*arr;
 
 	if (check_if_sorted(*a) == 0)
 		return ;
 	if (count == 2)
 	{
 		sa(a, 1);
-		return;
+		return ;
 	}
 	if (count == 3)
 	{
 		sort_three(a);
-		return;
+		return ;
 	}
 	arr = make_array(count, *a);
 	sort_array(arr, count);
@@ -35,17 +35,17 @@ static void sort_nodes(t_stack **a, t_stack **b, int count)
 	if (count <= 5)
 	{
 		sort_five(a, b, count);
-		return;
+		return ;
 	}
 	radix_sort(a, b, count);
 	return ;
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	char **input;
-	t_stack *a;
-	t_stack *b;
+	char	**input;
+	t_stack	*a;
+	t_stack	*b;
 	int		count;
 
 	if (argc == 1)

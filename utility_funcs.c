@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 21:59:43 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/20 11:02:05 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/21 10:47:36 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,6 @@ long	ft_atoi_long(char *str)
 		str++;
 	}
 	return (num * neg);
-}
-
-void	print_nodes(t_stack *a, char c)
-{
-	t_stack	*temp;
-
-	temp = a;
-	if (!a)
-	{
-		ft_printf("%c is empty\n", c);
-		return ;
-	}
-	while (1)
-	{
-		ft_printf("stack %c (adress prev %p), (adress of value %p) - {%d}, (adress next: %p)\n", c, temp->prev, &temp->value, temp->value, temp->next);
-		temp = temp->next;
-		if (temp == a)
-			break ;
-	}
 }
 
 int	*make_array(int count, t_stack *a)
@@ -122,4 +103,3 @@ void	add_node_position(t_stack *a, int *arr, int count)
 			break ;
 	}
 }
-

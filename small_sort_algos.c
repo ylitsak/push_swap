@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:06:26 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/18 16:35:37 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/21 10:47:08 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	sort_three(t_stack **a)
 		sa(a, 1);
 	}
 }
+
 static int	count_index(t_stack *a, int min)
 {
 	int		count;
