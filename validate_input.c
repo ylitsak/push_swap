@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 11:09:00 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/21 16:05:59 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/23 17:10:28 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ static int	input_is_numbers(char **input)
 	int	j;
 
 	i = 0;
-	j = 0;
 	while (input[i])
 	{
 		j = 0;
