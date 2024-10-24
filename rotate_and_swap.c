@@ -1,19 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_stack.c                                       :+:      :+:    :+:   */
+/*   rotate_and_swap.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 17:17:29 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/06 14:04:46 by saylital         ###   ########.fr       */
+/*   Created: 2024/10/24 15:24:56 by saylital          #+#    #+#             */
+/*   Updated: 2024/10/24 15:49:48 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Swap the first 2 elements at the top of stack a.
-// Do nothing if there is only one or no elements.
 void	sa(t_stack **a, int print)
 {
 	t_stack	*first;
@@ -34,32 +32,24 @@ void	sa(t_stack **a, int print)
 		ft_printf("%s\n", "sa");
 }
 
-// Swap the first 2 elements at the top of stack b.
-// Do nothing if there is only one or no elements.
-void	sb(t_stack **b, int print)
+void	ra(t_stack **a, int print)
 {
-	t_stack	*first;
-	t_stack	*second;
-
-	if (*b == NULL || (*b)->next == *b)
+	if (*a == NULL)
 		return ;
-	first = *b;
-	second = (*b)->next;
-	first->next = second->next;
-	second->next->prev = first;
-	second->next = first;
-	second->prev = first->prev;
-	first->prev->next = second;
-	first->prev = second;
-	*b = second;
+	if ((*a)->next == *a)
+		return ;
+	*a = (*a)->next;
 	if (print)
-		ft_printf("%s\n", "sb");
+		ft_printf("%s\n", "ra");
 }
 
-// sa and sb at the same time
-void	ss(t_stack **a, t_stack **b)
+void	rra(t_stack **a, int print)
 {
-	sa(a, 0);
-	sb(b, 0);
-	ft_printf("%s\n", "ss");
+	if (*a == NULL)
+		return ;
+	if ((*a)->next == *a)
+		return ;
+	*a = (*a)->prev;
+	if (print)
+		ft_printf("%s\n", "rra");
 }

@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:13:56 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/21 11:26:42 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/24 15:34:37 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ static	void	set_head(t_stack **temp, t_stack **stack)
 	(*temp)->prev = *temp;
 	*stack = *temp;
 }
-// Take the first element at the top of b and put it at the top of a.
-// Do nothing if b is empty.
 
 void	pa(t_stack **a, t_stack **b)
 {
@@ -49,8 +47,6 @@ void	pa(t_stack **a, t_stack **b)
 	ft_printf("%s\n", "pa");
 }
 
-// Take the first element at the top of a and put it at the top of b.
-// Do nothing if a is empty.
 void	pb(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;
