@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 10:34:23 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/24 15:35:42 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/24 16:16:07 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int argc, char *argv[])
 	if (argc == 1)
 		return (0);
 	input = get_input(argc, argv);
-	if (validate_input(input) == 1)
+	if (validate_input(input) == 1 || *input == NULL)
 		error_and_free(argc, input, "Error");
 	a = init_nodes(argc, input);
 	b = NULL;

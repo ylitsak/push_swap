@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:48:52 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/24 14:28:42 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/24 16:20:32 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,21 +64,21 @@ static char	*string_join_args(int argc, char **argv)
 	i = 3;
 	if (is_empty(argv[1]) == 1 || is_empty(argv[2]) == 1)
 		print_error(NULL, "Error");
-	temp = ft_strjoinps(argv[1], argv[2]);
-	if (temp == NULL)
+	result = ft_strjoinps(argv[1], argv[2]);
+	if (result == NULL)
 		print_error(NULL, "Malloc failed");
 	while (i < argc)
 	{
 		if (is_empty(argv[i]) == 1)
-			print_error(temp, "Error");
-		result = ft_strjoinps(temp, argv[i]);
-		if (result == NULL)
-			print_error(temp, "Malloc failed");
-		free(temp);
-		temp = result;
+			print_error(result, "Error");
+		temp = ft_strjoinps(result, argv[i]);
+		if (temp == NULL)
+			print_error(result, "Malloc failed");
+		free(result);
+		result = temp;
 		i++;
 	}
-	return (temp);
+	return (result);
 }
 
 char	**get_input(int argc, char *argv[])
