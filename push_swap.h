@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 11:13:31 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/23 17:17:58 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/24 14:19:11 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ int		count_nodes(t_stack *a);
 void	free_all(char **free_data);
 void	free_stack(t_stack *head);
 void	error_and_free(int argc, char **input, char *msg);
+void	print_error(char *input, char *msg);
 //utility_funcs.c
 long	ft_atoi_long(char *str);
 int		*make_array(int count, t_stack *a);
 void	sort_array(int *arr, int count);
-int		find_lowest_pos(t_stack *a);
 void	add_node_position(t_stack *a, int *arr, int count);
 // swap_stacks.c
 void	sa(t_stack **a, int print);
@@ -57,5 +57,7 @@ void	sort_three(t_stack **a);
 void	sort_small(t_stack **a, t_stack **b, int count);
 // radix_sort.c
 void	radix_sort(t_stack **a, t_stack **b, int count);
+// get_input.c
+char	**get_input(int argc, char *argv[]);
 
 #endif
