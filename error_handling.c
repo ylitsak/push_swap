@@ -6,7 +6,7 @@
 /*   By: saylital <saylital@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 11:29:45 by saylital          #+#    #+#             */
-/*   Updated: 2024/10/23 17:17:22 by saylital         ###   ########.fr       */
+/*   Updated: 2024/10/23 17:23:24 by saylital         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	error_and_free(int argc, char **input, char *msg)
 {
 	if (msg != NULL)
 		ft_putendl_fd(msg, 2);
-	if (argc == 2)
+	if (argc > 1)
 		free_all(input);
 	exit(EXIT_FAILURE);
 }
